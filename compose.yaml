@@ -1,0 +1,14 @@
+﻿services:
+  api:
+    build: .
+    container_name: ai-ops-api
+    ports:
+      - "8000:8000"
+    environment:
+      DB_PATH: /app/data/tickets.db
+    volumes:
+      - ticket_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  ticket_data:
