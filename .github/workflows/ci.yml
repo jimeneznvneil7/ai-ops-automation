@@ -29,3 +29,6 @@ jobs:
 
       - name: Run pytest
         run: python -m pytest -v
+
+      - name: Build Docker image
+        run: docker build -t ai-ops-automation:ci .
